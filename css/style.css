@@ -95,6 +95,8 @@ h1 #channel-star {
     /* #6 #liking #filled  */
     position:absolute;
     right: 16px;
+    font-size: 24px;
+    top: 20px;
 }
 
 /* CHANNELS LIST */
@@ -127,6 +129,7 @@ li .channel-meta {
     position: absolute;
     right: 16px;
     top: 12px;
+    font-size: 24px;
 }
 
 li img {

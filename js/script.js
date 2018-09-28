@@ -10,13 +10,13 @@ function switchChannel(channelName) {
     console.log("Tuning in to channel", channelName);
 
     //Write the new channel to the right app bar
-    document.getElementById('channel-name').innerHTML = channelName;
+    document.getElementById('channel-name').innerHTML = channelName["name"];
 
     //#6 change the #channel #location
-    document.getElementById('channel-location').innerHTML = 'by <a href="http://w3w.co/upgrading.never.helps" target="_blank"><strong>upgrading.never.helps</strong></a>';
+    document.getElementById('channel-location').innerHTML = 'by <a href= "http://w3w.co/' + channelName["createdBy"] + '" target="_blank"><strong>' + channelName["createdBy"] + '</strong></a>';
 
     /* #6 #liking channels on #click */
-    $('#channel-star').attr('src', 'http://ip.lfe.mw.tum.de/sections/star-o.png');
+    $('#channel-star').html(channelName['starred'] ? 'fas' : 'far');
 
     /* #6 #highlight the selected #channel.
        This is inefficient (jQuery has to search all channel list items), but we'll change it later on */
@@ -26,7 +26,7 @@ function switchChannel(channelName) {
 
 /* #6 #liking a channel on #click */
 function star() {
-    $('#channel-star').attr('src', 'http://ip.lfe.mw.tum.de/sections/star.png');
+    $('#channel-star').toggleClass("far fa-star fas fa-star");
 }
 
 /**
